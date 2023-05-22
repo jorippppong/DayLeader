@@ -7,7 +7,8 @@
     android:background="#FFFFFF"
     android:foregroundTint="#FFFEFE"
     android:orientation="vertical"
-    android:paddingTop="10dp">
+    android:paddingTop="10dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/Calendar_title"

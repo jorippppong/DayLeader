@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    >
+    <!--    tools:context=".MainActivity" 원래는 이부분이 main이랑 연결된 xml 이었음-->
 
     <TextView
         android:layout_width="wrap_content"
