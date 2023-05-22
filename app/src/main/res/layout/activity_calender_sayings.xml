@@ -45,16 +45,19 @@
     <!--    명언 들어갈 부분-->
 
 
-    <ImageView
-        android:id="@+id/Fortune_teller"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="685dp"
-        android:background="@drawable/magic_ball" />
-        <!--    수정구슬 이미지-->
+    <!--    수정구슬 이미지-->
 
+
+    <!--    명언 표기하는 부분 제목-->
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="706dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="@color/white" />
 
     <TextView
         android:id="@+id/Fortune_Today"
@@ -70,6 +73,15 @@
         android:textSize="15dp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/Fortune_teller"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="685dp"
+        android:background="@drawable/magic_ball" />
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -78,25 +90,39 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="15dp"
-        android:layout_marginBottom="139dp"
+        android:layout_marginBottom="144dp"
         android:text="<Today's letter>"
         android:textColor="#251749"
         android:textSize="25dp"
         android:textStyle="bold" />
-    <!--    명언 표기하는 부분 제목-->
 
     <TextView
-        android:id="@+id/saying_content"
+        android:id="@+id/Eng_Quotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginBottom="76dp"
-        android:text='"이 세상에 보장된 것은 아무것도 없으며\n 오직 기회만 있을 뿐이다."'
-        android:textColor="#FFFBEB"
-        android:textSize="20dp" />
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="90dp"
+        android:text='"I am not afraid of storms\n for I am learning how to sail my ship."'
+        android:textColor="#ffffff"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/Kor_Quotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="75dp"
+        android:text='"나는 폭풍이 두렵지 않다. 나의 배로 항해하는 법을 배우고 있으니까."'
+        android:textColor="#251749"
+        android:textSize="10dp" />
+
+
 
     <TextView
         android:id="@+id/by_whom"
@@ -105,12 +131,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="200dp"
-        android:layout_marginBottom="53dp"
-        android:text="General Douglas MacArthur"
-        android:textColor="#263159"
+        android:layout_marginStart="274dp"
+        android:layout_marginBottom="52dp"
+        android:text="Helen Keller"
+        android:textColor="#212C53"
         android:textSize="15dp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold" />
+
+
 
     <View
         android:id="@+id/WhiteUnderline"
@@ -120,16 +148,6 @@
         android:layout_marginTop="675dp"
         android:background="?android:attr/listDivider"
         android:backgroundTint="#FFFFFF" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="250dp"
-        android:layout_height="2dp"
-        android:backgroundTint="@color/white"
-        android:background="?android:attr/listDivider"
-        android:layout_marginTop="706dp"
-        android:layout_marginStart="150dp"
-        />
 
 
 </RelativeLayout>

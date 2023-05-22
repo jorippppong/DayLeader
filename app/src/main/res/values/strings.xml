@@ -1,3 +1,125 @@
 <resources>
     <string name="app_name">DayLeader</string>
+    <String-array name="randomQuotes">
+        <item>아무런 위험을 감수하지 않는다면 더 큰 위험을 감수하게 될 것이다.</item>
+        <item>태어나면서부터 현명한 이는 없다.</item>
+        <item>나는 폭풍이 두렵지 않다. 나의 배로 항해하는 법을 배우고 있으니까.</item>
+        <item>삶은 공평하지 않다. 다만 죽음보다는 공평할 뿐이다.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </String-array>
+
+    <String-array name="EngQuotes">
+        <item>If you don't risk anything you risk even more.</item>
+        <item>No man is born wise.</item>
+        <item>I am not afraid of storms for I am learning how to sail my ship.</item>
+        <item>Life isn't fair. It's just fairer than death, that's all.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </String-array>
+
+
+    <String-array name="Eng_byWhom">
+        <item>Erica Jong</item>
+        <item>Miguel de Cervantes</item>
+        <item>Helen Keller</item>
+        <item>William Goldman</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </String-array>
+
+
 </resources>
