@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:foregroundTint="#FFFEFE"
+    android:orientation="vertical"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:id="@+id/Calendar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="CALENDAR"
+        android:textColor="#251749"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/CALENDAR"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:layout_alignBaseline="@id/Calendar_title"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/calendar_example" />
+
+    <ImageView
+        android:id="@+id/Bluebox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="535dp"
+        android:background="@drawable/underpart_background" />
+    <!--    명언 바탕에 이전에 만든 박스 깔기 - 코드 이동 하는 경우 underpart_background 다시 만들어야 함-->
+
+    <ImageView
+        android:id="@+id/Whiterect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="544dp"
+        android:background="@drawable/underpart_rect"
+        android:visibility="invisible" />
+    <!--    명언 들어갈 부분-->
+
+
+    <ImageView
+        android:id="@+id/Fortune_teller"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="685dp"
+        android:background="@drawable/magic_ball" />
+        <!--    수정구슬 이미지-->
+
+
+    <TextView
+        android:id="@+id/Fortune_Today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/Fortune_teller"
+        android:layout_marginStart="170dp"
+        android:layout_marginBottom="-1dp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Click Here to See Fortune of Today"
+        android:textColor="#251749"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="139dp"
+        android:text="<Today's letter>"
+        android:textColor="#251749"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+    <!--    명언 표기하는 부분 제목-->
+
+    <TextView
+        android:id="@+id/saying_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="76dp"
+        android:text='"이 세상에 보장된 것은 아무것도 없으며\n 오직 기회만 있을 뿐이다."'
+        android:textColor="#FFFBEB"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/by_whom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="200dp"
+        android:layout_marginBottom="53dp"
+        android:text="General Douglas MacArthur"
+        android:textColor="#263159"
+        android:textSize="15dp"
+        android:textStyle="bold|italic" />
+
+    <View
+        android:id="@+id/WhiteUnderline"
+        android:layout_width="300dp"
+        android:layout_height="3dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="675dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="#FFFFFF" />
+
+
+
+
+
+
+</RelativeLayout>
