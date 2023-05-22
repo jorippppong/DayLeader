@@ -114,16 +114,22 @@
 
     <View
         android:id="@+id/WhiteUnderline"
-        android:layout_width="300dp"
-        android:layout_height="3dp"
+        android:layout_width="360dp"
+        android:layout_height="0.3dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="675dp"
         android:background="?android:attr/listDivider"
         android:backgroundTint="#FFFFFF" />
 
-
-
-
+    <View
+        android:id="@+id/divider"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:backgroundTint="@color/white"
+        android:background="?android:attr/listDivider"
+        android:layout_marginTop="706dp"
+        android:layout_marginStart="150dp"
+        />
 
 
 </RelativeLayout>
