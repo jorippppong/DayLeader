@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">DayLeader</string>
-    <String-array name="engquotes">
+
+    <String-array name="EngQuotes">
         <item>If you don't risk anything you risk even more.</item>
         <item>No man is born wise.</item>
         <item>I am not afraid of storms for I am learning how to sail my ship.</item>
