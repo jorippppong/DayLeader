@@ -47,4 +47,8 @@ dependencies {
 
     //checkDebugDuplicateClasses
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+
+    //calendar
+    implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
+    //implementation 'com.jakewharton.threetenabp:threetenabp:1.1.1'
 }
