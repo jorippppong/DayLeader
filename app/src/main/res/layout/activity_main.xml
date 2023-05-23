@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--<com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        android:id="@+id/cv_calendar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:visibility="gone"
-        app:mcv_selectionColor="#f79256"
-        app:mcv_selectionMode="range" />-->
-
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/calendarView"
@@ -24,7 +15,7 @@
         android:layout_width="0dp"
         android:layout_height="400dp"
         app:mcv_showOtherDates="all"
-        app:mcv_selectionColor="#00F"
+        app:mcv_selectionColor="@color/blue_01"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
