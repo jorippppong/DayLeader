@@ -92,7 +92,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="144dp"
-        android:text="<Today's letter>"
+        android:text="Today's letter"
         android:textColor="#251749"
         android:textSize="25dp"
         android:textStyle="bold" />
