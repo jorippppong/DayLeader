@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public TextView Whose;//명언 말한사람 이름 불러올것
     public ArrayList<Quote> quoteList;
     public int index;
-    Resources res = getResources();
+    Resources res = getResources();  //여기 에러 발생
 
 
 
