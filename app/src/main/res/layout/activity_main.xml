@@ -7,7 +7,6 @@
     tools:context=".MainActivity">
 
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/calendarView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,5 +16,7 @@
         app:mcv_showOtherDates="all"
         app:mcv_selectionColor="@color/blue_01"
         />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
