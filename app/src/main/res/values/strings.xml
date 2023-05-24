@@ -3,11 +3,11 @@
     <string name="app_name">DayLeader</string>
 
     <string-array name="EngQuotes">
-        <item>If you don't risk anything you risk even more.</item>
+        <item>If you don\'t risk anything you risk even more.</item>
         <item>No man is born wise.</item>
         <item>I am not afraid of storms for I am learning how to sail my ship.</item>
-        <item>Life isn't fair. It's just fairer than death, that's all.</item>
-        <item>Life is something that happens when you can't get to sleep.</item>
+        <item>Life isn\'t fair. It\'s just fairer than death, that\'s all.</item>
+        <item>Life is something that happens when you can\'t get to sleep.</item>
         <item>Genius without education is like silver in the mine.</item>
         <item>Kites rise highest against the wind - not with it.</item>
         <item>To freely bloom - that is my definition of success.</item>
@@ -22,10 +22,10 @@
         <item>I never think of the future - it comes soon enough.</item>
         <item>Regret for wasted time is more wasted time.</item>
         <item>If you want the present to be different from the past, study the past.</item>
-        <item>It's not that I'm so smart , it's just that I stay with problems longer.</item>
+        <item>It\'s not that I\'m so smart , it\'s just that I stay with problems longer.</item>
         <item>It has never been my object to record my dreams, just to realize them.</item>
         <item>Keep true to the dreams of thy youth.</item>
-        <item>Risk comes from not knowing what you're doing.</item>
+        <item>Risk comes from not knowing what you\'re doing.</item>
         <item>Accept challenges, so that you may feel the exhilaration of victory.</item>
         <item>The most courageous act is still to think for yourself. Aloud.</item>
         <item>The secret of getting ahead is getting started.</item>

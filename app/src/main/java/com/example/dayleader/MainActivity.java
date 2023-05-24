@@ -2,18 +2,12 @@ package com.example.dayleader;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.content.res.Resources;
 
 
-import org.w3c.dom.Document;
-
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public TextView Engs;//영어 명언 불러올것
@@ -26,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calender_sayings);//이 부분 원래 activity_main이었음
+        setContentView(R.layout.activity_main);//이 부분 원래 activity_main이었음
 
         Engs = (TextView) findViewById(R.id.Eng_Quotes);//텍스트 표시할 텍스트뷰 지정
         Kors = (TextView) findViewById(R.id.Kor_Quotes);
