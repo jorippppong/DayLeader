@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public TextView Whose;//명언 말한사람 이름 불러올것
     public ArrayList<Quote> quoteList;
     public int index;
-    Resources res = getResources();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,10 @@ public class MainActivity extends AppCompatActivity {
         Kors = (TextView) findViewById(R.id.Kor_Quotes);
         Whose = (TextView) findViewById(R.id.by_whom);
 
+        //Log.e("hhh", a);
 
+
+        Resources res = getResources();
         String[] allEngs = res.getStringArray(R.array.EngQuotes);//res에 저장되어 있는 영어 명언 불러올 배열 만들기
         String[] allKors = res.getStringArray(R.array.KorQuotes);
         String[] allWhose = res.getStringArray(R.array.Eng_byWhom);
