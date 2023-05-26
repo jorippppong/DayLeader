@@ -10,17 +10,16 @@
     android:paddingTop="10dp"
     tools:context=".MainActivity">
 
+
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/calendarView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="400dp"
-        app:mcv_showOtherDates="all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Calendar_title"
         app:mcv_selectionColor="@color/blue_01"
-        />
-
+        app:mcv_showOtherDates="all" />
 
     <TextView
         android:id="@+id/Calendar_title"
@@ -32,7 +31,8 @@
         android:textSize="25dp" />
 
 
-
+        <!--  TO-DO 완료도 안들어감  -->
+        <!-- calendar view 조절하고 맞춰서 view 완성하고 해당 브랜치에 push 할 것       -->
     <ImageView
         android:id="@+id/Bluebox"
         android:layout_width="match_parent"
@@ -40,6 +40,16 @@
         android:layout_marginTop="535dp"
         android:background="@drawable/underpart_background" />
     <!--    명언 바탕에 이전에 만든 박스 깔기 - 코드 이동 하는 경우 underpart_background 다시 만들어야 함-->
+
+
+
+    <!--    명언 들어갈 부분-->
+
+
+    <!--    수정구슬 이미지-->
+
+
+    <!--    명언 표기하는 부분 제목-->
 
     <ImageView
         android:id="@+id/Whiterect"
@@ -49,13 +59,6 @@
         android:layout_marginTop="544dp"
         android:background="@drawable/underpart_rect"
         android:visibility="invisible" />
-    <!--    명언 들어갈 부분-->
-
-
-    <!--    수정구슬 이미지-->
-
-
-    <!--    명언 표기하는 부분 제목-->
 
     <View
         android:id="@+id/divider"
@@ -155,6 +158,15 @@
         android:layout_marginTop="675dp"
         android:background="?android:attr/listDivider"
         android:backgroundTint="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/reload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:layout_marginStart="370dp"
+        app:srcCompat="@drawable/baseline_loop_24" />
+    <!-- 해당 버튼 클릭시에 랜덤으로 다음 명언 출력   -->
 
 
 </RelativeLayout>

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.content.res.Resources;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
@@ -20,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     public TextView Engs;//영어 명언 불러올것
     public TextView Kors;//한글 명언 불러올것
     public TextView Whose;//명언 말한사람 이름 불러올것
-    public ArrayList<Quote> quoteList;
+    public ImageView reloadButtonImageview;//버튼 저장할 변수
+    public ArrayList<Quote> quoteList;//명언 저장할 배열 만들기
     public int index;
 
 
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         Engs = (TextView) findViewById(R.id.Eng_Quotes);//텍스트 표시할 텍스트뷰 지정
         Kors = (TextView) findViewById(R.id.Kor_Quotes);
         Whose = (TextView) findViewById(R.id.by_whom);
+        reloadButtonImageview = (ImageView) findViewById(R.id.reload_button);//위의 버튼 가져오기
+
 
         //Log.e("hhh", a);
 
@@ -43,10 +48,21 @@ public class MainActivity extends AppCompatActivity {
         String[] allWhose = res.getStringArray(R.array.Eng_byWhom);
         quoteList = new ArrayList<>();
         addToQuoteList(allEngs, allKors, allWhose);
+        //리소스에 있는 명언 임포트하기
 
         final int quotesLength = quoteList.size();
         index = getRandomQuote(quotesLength - 1);
         Engs.setText(quoteList.get(index).toString());
+        //랜덤으로 명언 발생시키기
+
+        reloadButtonImageview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                index = getRandomQuote(quotesLength - 1);
+                Engs.setText(quoteList.get(index).toString());//명언 텍스트뷰로 가져오기
+            }
+        });
+        //클릭하는 경우 새로운 명언 발생시키기
 
 
         //=================//
