@@ -37,10 +37,14 @@ public class Quote {
 
     @Override
     public String toString() {
-        return "Quote{" +
-                "engs='" + engs + '\'' +
-                ", kors='" + kors + '\'' +
-                ", author='" + author + '\'' +
-                '}';
-    }// 출력할 명언의 모양 설정하기 - 마지막에 결과 출려해보고 수정할 것
+        return engs;
+    }
+
+    public String toString(int a) {
+        return kors;
+    }
+
+    public String toString(String b) {
+        return author;
+    }
 }

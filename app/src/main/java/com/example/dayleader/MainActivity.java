@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         final int quotesLength = quoteList.size();
         index = getRandomQuote(quotesLength - 1);
         Engs.setText(quoteList.get(index).toString());
+        Kors.setText(quoteList.get(index).toString(1));
+        Whose.setText(quoteList.get(index).toString("a"));
         //랜덤으로 명언 발생시키기
 
         reloadButtonImageview.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 index = getRandomQuote(quotesLength - 1);
                 Engs.setText(quoteList.get(index).toString());//명언 텍스트뷰로 가져오기
+                Kors.setText(quoteList.get(index).toString(1));
+                Whose.setText(quoteList.get(index).toString("a"));
             }
         });
         //클릭하는 경우 새로운 명언 발생시키기
