@@ -5,15 +5,15 @@
     <string-array name="EngQuotes">
         <item>If you don\'t risk anything you risk even more.</item>
         <item>No man is born wise.</item>
-        <item>I am not afraid of storms for I am learning how to sail my ship.</item>
-        <item>Life isn\'t fair. It\'s just fairer than death, that\'s all.</item>
-        <item>Life is something that happens when you can\'t get to sleep.</item>
+        <item>I am not afraid of storms for\n I am learning how to sail my ship.</item>
+        <item>Life isn\'t fair.\n It\'s just fairer than death, that\'s all.</item>
+        <item>Life is something that happens\n when you can\'t get to sleep.</item>
         <item>Genius without education is like silver in the mine.</item>
         <item>Kites rise highest against the wind - not with it.</item>
         <item>To freely bloom - that is my definition of success.</item>
         <item>A goal without a plan is just a wish.</item>
         <item>Strive for excellence, not perfection.</item>
-        <item>There is no security on this earth, there is only opportunity.</item>
+        <item>There is no security on this earth,\n there is only opportunity.</item>
         <item>Talent wins games, but teamwork wins championships.</item>
         <item>Life-transforming ideas have always come to me through books.</item>
         <item>Live always in the best company when you read.</item>
@@ -74,7 +74,7 @@
         <item>Benjamin Franklin</item>
         <item>Sir Winston Churchill</item>
         <item>Gerry Spence</item>
-        <item>Antoine de Saint-Exupery</item>
+        <item>Antoine de Saint\-Exupery</item>
         <item>H. Jackson Brown Jr.</item>
         <item>General Douglas MacArthur</item>
         <item>Michael Jordan</item>
