@@ -89,8 +89,8 @@
         android:id="@+id/btn_todo"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/square_gray_title"
         android:drawableEnd="@drawable/ic_add_circle"
         android:paddingHorizontal="10dp"
@@ -107,8 +107,8 @@
         android:id="@+id/recyclerView_dailyTodo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btn_todo"
         android:layout_marginStart="5dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_todo"
         tools:listitem="@layout/item_todo_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

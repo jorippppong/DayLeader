@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.dayleader.R
 import com.example.dayleader.TodoActivity
 import com.example.dayleader.databinding.ItemTodoListBinding
@@ -37,7 +38,7 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
 
     //뷰 홀더
     //각 목록에 필요한 기능 들을 구현 하는 공간
-    class Holder(val binding: ItemTodoListBinding) : RecyclerView.ViewHolder(binding.root) {
+    class Holder(private val binding: ItemTodoListBinding) : RecyclerView.ViewHolder(binding.root) {
         private val todoActivity = TodoActivity.getInstance()
         var mMember: TodoInfo? = null
         private var mPosition: Int? = null
@@ -55,9 +56,9 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
             }
 
             //이미지 클릭하면 보여주는 기능
-           /* binding.ivPhoto.setOnClickListener {
-                todoActivity?.showImageBottomSheetDialog(mMember!!.imageUrl, mMember!!.task, mMember!!.date)
-            }*/
+            binding.ivPhoto.setOnClickListener {
+                todoActivity?.showImageBottomSheetDialog(mMember!!.imageUrl, mMember!!.task)
+            }
 
             binding.btnThreeDot.setOnClickListener {
                 todoActivity?.showTodoBottomSheetDialog(mMember!!, mPosition!!)
@@ -116,6 +117,20 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
                 }
             }
 
+            //이미지 보이게, 안 보이게 설정
+            if(mMember!!.imageUrl == "EMPTY"){
+                //없으면 투명 하고, 터치 못하게 설정
+                binding.ivPhoto.isEnabled = false
+                binding.ivPhoto.setImageResource(R.drawable.iv_invisible_box)
+            }else{
+                binding.ivPhoto.isEnabled = true
+                mMember!!.imageUrl.let {
+                    Glide.with(binding.ivPhoto.context)
+                        .load(mMember!!.imageUrl)
+                        .error(R.drawable.ic_add_circle)
+                        .into(binding.ivPhoto)
+                }
+            }
         }
     }
 }
