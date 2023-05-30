@@ -139,6 +139,7 @@ class TodoActivity : AppCompatActivity() {
         todoAdapter?.notifyDataSetChanged()
     }
 
+    //TODO 여기 구현 필요 : 이미지 크게 보여주는 기능
     fun showImageBottomSheetDialog(){
 
     }
@@ -227,7 +228,6 @@ class TodoActivity : AppCompatActivity() {
                 finish()
                 return true
             }
-
             else -> {}
         }
         return super.onOptionsItemSelected(item)

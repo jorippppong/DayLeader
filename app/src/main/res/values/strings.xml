@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DayLeader</string>
-    <string name="what_todo">What Todo</string>
+    <string name="what_todo">What Todo\t</string>
     <string name="modify_to_do">modify to-do</string>
     <string name="delete_to_do">delete to-do</string>
     <string name="delete_photo">delete photo</string>

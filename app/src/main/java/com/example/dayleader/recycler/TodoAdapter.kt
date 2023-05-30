@@ -24,7 +24,8 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
 
     //어떤 레이 아웃을 생성 할 것인가
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding = ItemTodoListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemTodoListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding)
     }
 
@@ -40,28 +41,26 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
         private val todoActivity = TodoActivity.getInstance()
         var mMember: TodoInfo? = null
         private var mPosition: Int? = null
+
         init {
             binding.btnCheck.setOnClickListener {
                 //Check 표시 변경 가능 할 수 있는 기능 : 초기 설정
                 if (!(mMember!!.complete)) {
                     binding.btnCheck.setImageResource(R.drawable.iv_daily_todo_checked)
-                    val putDailyTodo = PutDailyTodoChanged("true", mMember!!.private_todo_id.toString())
-                    putModifyCheck(token, putDailyTodo)
                     mMember!!.complete = true
                 } else {
                     binding.btnCheck.setImageResource(R.drawable.btn_todo_disabled)
-                    val putDailyTodo = PutDailyTodoChanged("false", mMember!!.private_todo_id.toString())
-                    putModifyCheck(token, putDailyTodo)
                     mMember!!.complete = false
                 }
             }
 
-            binding.ivPhoto.setOnClickListener {
+            //이미지 클릭하면 보여주는 기능
+           /* binding.ivPhoto.setOnClickListener {
                 todoActivity?.showImageBottomSheetDialog(mMember!!.imageUrl, mMember!!.task, mMember!!.date)
-            }
+            }*/
 
             binding.btnThreeDot.setOnClickListener {
-                todoActivity?.showDailyBottomSheetDialog(mMember!!, mPosition!!)
+                todoActivity?.showTodoBottomSheetDialog(mMember!!, mPosition!!)
             }
 
         }
@@ -85,13 +84,11 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
                 binding.btnThreeDot.visibility = View.INVISIBLE
                 binding.ivPhoto.visibility = View.INVISIBLE
                 binding.btnCheck.isEnabled = false
-                binding.etTodo.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#6B9AC4"))
+                binding.etTodo.backgroundTintList =
+                    ColorStateList.valueOf(Color.parseColor("#6B9AC4"))
                 binding.etTodo.isEnabled = true
                 binding.etTodo.setSelection(member.task.length)
                 binding.etTodo.requestFocus()
-
-                //todo
-                //todoActivity?.keyboardDown(binding.etTodo)
 
                 binding.etTodo.setOnEditorActionListener { _, actionId, event ->
                     Log.d("Yuri", "키보드 접근")
@@ -102,31 +99,14 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
                         binding.btnThreeDot.visibility = View.VISIBLE
                         binding.ivPhoto.visibility = View.VISIBLE
                         binding.btnCheck.isEnabled = true
-                        binding.etTodo.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#00000000"))
+                        binding.etTodo.backgroundTintList =
+                            ColorStateList.valueOf(Color.parseColor("#00000000"))
 
                         if (binding.etTodo.text.toString().isEmpty()) {
                             //투두에 값이 없는 경우
-                            if (member.task.isEmpty()) {
-                                //신규 투두 -> nothing to change
-                            } else {
-                                //있는 투두 -> 삭제 api
-                                //todoActivity?.deleteDailyTodo(token, member.private_todo_id)
-                            }
-                            //todoActivity?.deleteTodo(member)
+                            todoActivity?.deleteTodo(member)
                         } else {
                             //투두에 값이 있는 경우 (신규 -> 추가 or 있는 -> 수정)
-                            if (member.task.isEmpty()) {
-                                //to-do (api - 성공) : 신규 투두 -> 새로 추가 api
-                                val postDailyTodo = PostDailyNewTodo(date, binding.etTodo.text.toString())
-                                postDailyNewTodo(token, postDailyTodo)
-                            } else {
-                                //to-do (api - 성공) : 있는 투두 -> 수정 api
-                                val putDailyTodoTaskModify = PutDailyTodoTaskModify(
-                                    member.private_todo_id.toString(),
-                                    binding.etTodo.text.toString()
-                                )
-                                putModifyTask(token, putDailyTodoTaskModify)
-                            }
                             member.task = binding.etTodo.text.toString() //task 갱신
                         }
                         true
@@ -136,45 +116,6 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
                 }
             }
 
-            //TODO : 이미지 초기 설정
-            if(mMember!!.imageUrl == "EMPTY"){
-                //없으면 투명 하고, 터치 못하게 설정
-                binding.ivPhoto.isEnabled = false
-                binding.ivPhoto.setImageResource(R.drawable.iv_invisible_box)
-            }else{
-                binding.ivPhoto.isEnabled = true
-                //val path = "https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=1200&q=60"
-                val path = default_Address + mMember!!.imageUrl
-
-                //todo : 이미지 를 불러 온다...
-                if(member.imageUrl != "EMPTY"){
-                    Log.d("Yuri", "link : ${member.imageUrl}")
-                    Glide.with(binding.ivPhoto.context)
-                        .load(path)
-                        .listener(object:RequestListener<Drawable>{
-                            override fun onResourceReady(
-                                resource: Drawable?,
-                                model: Any?,
-                                target: Target<Drawable>?,
-                                dataSource: DataSource?,
-                                isFirstResource: Boolean
-                            ): Boolean {
-                                return false
-                            }
-                            override fun onLoadFailed(
-                                e: GlideException?,
-                                model: Any?,
-                                target: Target<Drawable>?,
-                                isFirstResource: Boolean
-                            ): Boolean {
-                                Log.e("Yuri", "fail : ${e.toString()}")
-                                return false
-                            }
-                        })
-                        .error(R.drawable.ic_leaf)
-                        .transform(CenterCrop(), RoundedCorners(5))
-                        .into(binding.ivPhoto)
-                }
-            }
         }
+    }
 }
