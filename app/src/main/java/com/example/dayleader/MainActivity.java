@@ -19,12 +19,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TextView Engs;//영어 명언 불러올것
-    public TextView Kors;//한글 명언 불러올것
-    public TextView Whose;//명언 말한사람 이름 불러올것
-    public ImageView reloadButtonImageview;//버튼 저장할 변수
+    public TextView Engs;//영어 명언 텍스트뷰 이름 지정
+    public TextView Kors;//한글 명언 텍스트뷰 이름 지정
+    public TextView Whose;//명언 말한사람 이름 텍스트뷰 이름 지정
+    public ImageView reloadButtonImageview;//버튼 이미지뷰 이름 지정
     public ArrayList<Quote> quoteList;//명언 저장할 배열 만들기
-    public int index;
+    public int index;//해당 인덱스의 명언 가져올 것
 
 
     @Override
@@ -33,25 +33,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Engs = (TextView) findViewById(R.id.Eng_Quotes);//텍스트 표시할 텍스트뷰 지정
-        Kors = (TextView) findViewById(R.id.Kor_Quotes);
-        Whose = (TextView) findViewById(R.id.by_whom);
-        reloadButtonImageview = (ImageView) findViewById(R.id.reload_button);//위의 버튼 가져오기
+        Engs = (TextView) findViewById(R.id.Eng_Quotes);//영어 명언 표시할 텍스트뷰 지정
+        Kors = (TextView) findViewById(R.id.Kor_Quotes);//한글 명언 표시할 텍스트뷰 지정
+        Whose = (TextView) findViewById(R.id.by_whom);//명언 말한 사람 이름 표시할 텍스트뷰 지정
+        reloadButtonImageview = (ImageView) findViewById(R.id.reload_button);//버튼 가져오기
 
 
-        //Log.e("hhh", a);
 
-
-        Resources res = getResources();
+        Resources res = getResources();//Resource 객체 생성
         String[] allEngs = res.getStringArray(R.array.EngQuotes);//res에 저장되어 있는 영어 명언 불러올 배열 만들기
-        String[] allKors = res.getStringArray(R.array.KorQuotes);
-        String[] allWhose = res.getStringArray(R.array.Eng_byWhom);
+        String[] allKors = res.getStringArray(R.array.KorQuotes);//res에 저장되어 있는 한글 명언 불러올 배열 만들기
+        String[] allWhose = res.getStringArray(R.array.Eng_byWhom);//res에 저장되어 있는 명언 말한 사람 이름 불러올 배열 만들기
         quoteList = new ArrayList<>();
-        addToQuoteList(allEngs, allKors, allWhose);
-        //리소스에 있는 명언 임포트하기
+        addToQuoteList(allEngs, allKors, allWhose);//addToQuoteList 함수를 통해 배열에 세가지 요소 저장
+
+
 
         final int quotesLength = quoteList.size();
-        index = getRandomQuote(quotesLength - 1);
+        index = getRandomQuote(quotesLength - 1);//인덱스에 랜덤 숫자 저장하기
         Engs.setText(quoteList.get(index).toString());
         Kors.setText(quoteList.get(index).toString(1));
         Whose.setText(quoteList.get(index).toString("a"));
@@ -61,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 index = getRandomQuote(quotesLength - 1);
-                Engs.setText(quoteList.get(index).toString());//명언 텍스트뷰로 가져오기
-                Kors.setText(quoteList.get(index).toString(1));
-                Whose.setText(quoteList.get(index).toString("a"));
+                Engs.setText(quoteList.get(index).toString());//영어 명언 텍스트뷰로 가져오기
+                Kors.setText(quoteList.get(index).toString(1));//한글 명언 텍스트뷰로 가져오기
+                Whose.setText(quoteList.get(index).toString("a"));//말한 사람 텍스트뷰로 가져오기
             }
         });
         //클릭하는 경우 새로운 명언 발생시키기
@@ -106,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             Quote quote = new Quote(engs, kors, author);
             quoteList.add(quote);
         }
-    }//quoteList에 모든 영어 및 한글 명언, 말한 사람 추가하기
+    }//quoteList에 모든 영어 및 한글 명언, 말한 사람 추가하는 함수
 
     public int getRandomQuote(int length) {
         return (int) (Math.random() * length) + 1;
