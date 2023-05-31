@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DayLeader</string>
+    <string name="what_todo">What Todo\t</string>
+    <string name="modify_to_do">modify to-do</string>
+    <string name="delete_to_do">delete to-do</string>
+    <string name="delete_photo">delete photo</string>
+    <string name="upload_photo">upload image</string>
+    <string name="todo_text">use tumbler</string>
 
     <string-array name="EngQuotes">
         <item>If you don\'t risk anything you risk even more.</item>
