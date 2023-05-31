@@ -1,16 +1,17 @@
 package com.example.dayleader;
 
+import android.content.Intent;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
+
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
-import android.content.res.Resources;
-import android.widget.Button;
-import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -74,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     public void addToQuoteList(String[] allEngs, String[] allKors, String[] allWhose) {

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DayLeader</string>
+
+    <string name="Fortune_Cookie">Fortune Cookie</string>
+    <string name="Fortune_Sequence">Click the fortune cookie\n     to see your luck!</string>
+    //기본 버전 언어(영어)
+
     <string name="what_todo">What Todo\t</string>
     <string name="modify_to_do">modify to-do</string>
     <string name="delete_to_do">delete to-do</string>
@@ -101,5 +106,6 @@
         <item>Ovidius</item>
         <item>Glorai Pitzer</item>
     </string-array>
+
 
 </resources>

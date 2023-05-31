@@ -19,8 +19,27 @@
         android:textColor="#251749"
         android:textSize="25dp" />
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <Button
+        android:id="@+id/testbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="161dp"
+        android:text="test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="190dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+=======
+    <ImageView
+        android:id="@+id/CALENDAR"
+=======
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/calendarView"
+>>>>>>> 644f03b20245edf40d9e1066d4698ff84e6f5b07
         android:layout_width="match_parent"
         android:layout_height="400dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,3 +173,4 @@
 
 
 </RelativeLayout>
+>>>>>>> dd788fd584d72de219cd4cb572a96747b1662c77
