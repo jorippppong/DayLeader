@@ -2,6 +2,17 @@
 <resources>
     <string name="app_name">DayLeader</string>
 
+    <string name="Fortune_Cookie">Fortune Cookie</string>
+    <string name="Fortune_Sequence">Click the fortune cookie\n     to see your luck!</string>
+    //기본 버전 언어(영어)
+
+    <string name="what_todo">What Todo\t</string>
+    <string name="modify_to_do">modify to-do</string>
+    <string name="delete_to_do">delete to-do</string>
+    <string name="delete_photo">delete photo</string>
+    <string name="upload_photo">upload image</string>
+    <string name="todo_text">use tumbler</string>
+
     <string-array name="EngQuotes">
         <item>If you don\'t risk anything you risk even more.</item>
         <item>I am not afraid of storms for\nI am learning how to sail my ship.</item>
@@ -27,7 +38,7 @@
         <item>A mind troubled by doubt\ncannot focus on the course to victory.</item>
         <item>Success is the ability to go from\none failure to another with no loss of enthusiasm.</item>
         <item>Whenever I hear, \'It can\'t be done,\'\nI know I\'m close to success.</item>
-        <item>The reading of all good books is\nlike a conversation with the finest men of past centuries.</item>
+        <item>The reading of all good books is like a conversation\nwith the finest men of past centuries.</item>
         <item>The best thing about the future is\nthat it comes one day at a time.</item>
         <item>The future is here.\nIt\'s just not widely distributed yet.</item>
         <item>Quality is never an accident\nit is always the result of intelligent effort.</item>
@@ -113,5 +124,6 @@
         <item>Grace Hansen</item>
         <item>George Bernard Shaw</item>
     </string-array>
+
 
 </resources>

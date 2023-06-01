@@ -11,14 +11,10 @@
     tools:context=".MainActivity">
 
 
-    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_below="@id/Calendar_title"
-        app:mcv_selectionColor="@color/blue_01"
-        app:mcv_showOtherDates="all" />
-    <!-- 캘린더 보여지는 부분   -->
+
+
+
+
 
     <TextView
         android:id="@+id/Calendar_title"
@@ -30,6 +26,20 @@
         android:textSize="25dp" />
     <!-- 캘린더 뷰 위에 표기되는 제목   -->
 
+
+
+
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/Calendar_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:mcv_selectionColor="@color/blue_01"
+        app:mcv_showOtherDates="all" />
+    <!-- 캘린더 보여지는 부분   -->
 
 
     <ImageView
@@ -156,3 +166,4 @@
 
 
 </RelativeLayout>
+

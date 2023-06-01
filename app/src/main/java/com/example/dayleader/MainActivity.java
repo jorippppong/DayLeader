@@ -1,7 +1,13 @@
 package com.example.dayleader;
 
+import android.content.Intent;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,14 +16,20 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
+
 import java.util.ArrayList;
 
 
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
 
     public TextView Engs;//영어 명언 텍스트뷰 이름 지정
     public TextView Kors;//한글 명언 텍스트뷰 이름 지정
@@ -25,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
     public ImageView reloadButtonImageview;//버튼 이미지뷰 이름 지정
     public ArrayList<Quote> quoteList;//명언 저장할 배열 만들기
     public int index;//해당 인덱스의 명언 가져올 것
+
+
+
+
+
 
 
     @Override
@@ -40,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         Resources res = getResources();//Resource 객체 생성
+
         String[] allEngs = res.getStringArray(R.array.EngQuotes);//res에 저장되어 있는 영어 명언 불러올 배열 만들기
         String[] allKors = res.getStringArray(R.array.KorQuotes);//res에 저장되어 있는 한글 명언 불러올 배열 만들기
         String[] allWhose = res.getStringArray(R.array.Eng_byWhom);//res에 저장되어 있는 명언 말한 사람 이름 불러올 배열 만들기
@@ -85,16 +104,17 @@ public class MainActivity extends AppCompatActivity {
                 int dayOfMonth = date.getDay();
 
                 // 선택된 날짜 정보 출력
-                String selectedDate = year + "-" + month + "-" + dayOfMonth;
-                Log.d("mainActivity", "calendar selectedDate: " + selectedDate);
+                //String selectedDate = year + "-" + month + "-" + dayOfMonth;
+                //Log.d("mainActivity", "calendar selectedDate: " + selectedDate);
 
                 //정보 가지고 다음 Activity 로 이동
                 Intent intent = new Intent(MainActivity.this, TodoActivity.class);
-                intent.putExtra("dateInfo", selectedDate);
+                intent.putExtra("year", year);
+                intent.putExtra("month", month);
+                intent.putExtra("day", dayOfMonth);
                 startActivity(intent);
             }
         });
-
     }
 
     public void addToQuoteList(String[] allEngs, String[] allKors, String[] allWhose) {
