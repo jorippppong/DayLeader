@@ -126,7 +126,6 @@
         android:textSize="10dp" />
 
 
-
     <TextView
         android:id="@+id/by_whom"
         android:layout_width="wrap_content"
@@ -140,7 +139,6 @@
         android:textColor="#212C53"
         android:textSize="15dp"
         android:textStyle="bold" />
-
 
 
     <View
