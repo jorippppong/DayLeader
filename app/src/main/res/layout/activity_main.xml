@@ -84,7 +84,7 @@
         android:layout_marginStart="145dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="620dp"
-        android:background="@drawable/magic_ball" />
+        android:background="@drawable/fortune_cookie_for_button" />
     <!-- 오늘의 운세 페이지로 연결하는 버튼 옆의 수정구슬 이미지    -->
 
     <TextView
