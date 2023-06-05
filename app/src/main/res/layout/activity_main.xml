@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="CALENDAR"
-        android:textColor="#251749"
+        android:textColor="@color/blue_01"
         android:textSize="25dp" />
     <!-- 캘린더 뷰 위에 표기되는 CALENDAR 글자   -->
 
@@ -56,7 +56,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginBottom="173dp"
         android:text="Today's Quote"
-        android:textColor="#251749"
+        android:textColor="@color/blue_04"
         android:textSize="30dp"
         android:textStyle="bold" />
     <!-- 명언 보여주는 부분 제목(Today's Quote)   -->
@@ -85,7 +85,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="95dp"
         android:text='"나는 폭풍이 두렵지 않다. 나의 배로 항해하는 법을 배우고 있으니까."'
-        android:textColor="#251749"
+        android:textColor="@color/blue_04"
         android:textSize="11dp" />
     <!-- 한국어 명언   -->
 
@@ -99,7 +99,7 @@
         android:layout_marginStart="250dp"
         android:layout_marginBottom="68dp"
         android:text="Helen Keller"
-        android:textColor="#212C53"
+        android:textColor="@color/blue_02"
         android:textSize="15dp"
         android:textStyle="bold" />
     <!-- 해당 명언 말한 사람   -->
@@ -137,7 +137,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:text="Click Here to See Fortune of Today"
-        android:textColor="#251749"
+        android:textColor="@color/blue_01"
         android:textSize="15dp"
         android:textStyle="bold" />
     <!--    오늘의 운세 페이지로 연결하는 버튼-->
@@ -162,7 +162,7 @@
         android:layout_alignBottom="@id/Fortune_Today"
         android:layout_alignStart="@id/underline_for_fortune"
         android:layout_marginTop="620dp"
-        android:background="@drawable/fortune_cookie_for_button" />
+        android:background="@drawable/fortune_cookie_for_button_sb" />
     <!-- 오늘의 운세 페이지로 연결하는 버튼 옆의 포춘쿠키 이미지    -->
 
 
