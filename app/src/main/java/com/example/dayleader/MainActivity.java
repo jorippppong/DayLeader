@@ -31,10 +31,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
 
-    public TextView Engs;//영어 명언 텍스트뷰 이름 지정
-    public TextView Kors;//한글 명언 텍스트뷰 이름 지정
-    public TextView Whose;//명언 말한사람 이름 텍스트뷰 이름 지정
-    public ImageView reloadButtonImageview;//버튼 이미지뷰 이름 지정
+    public TextView Engs;//영어 명언 텍스트뷰
+    public TextView Kors;//한글 명언 텍스트뷰
+    public TextView Whose;//명언 말한사람 이름 텍스트뷰
+    public ImageView reloadButtonImageview;//버튼 이미지뷰
     public ArrayList<Quote> quoteList;//명언 저장할 배열 만들기
     public int index;//해당 인덱스의 명언 가져올 것
 

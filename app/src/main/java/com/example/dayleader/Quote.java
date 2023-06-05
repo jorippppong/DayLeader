@@ -45,6 +45,6 @@ public class Quote {
     }//한글 명언 문자열로 리턴해주기
 
     public String toString(String b) {
-        return "-  " + author;
+        return "- " + author;
     }//말한 사람 -와 함께 리턴해주기
 }

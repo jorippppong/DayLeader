@@ -4,7 +4,7 @@
 
     <size
         android:width="430dp"
-        android:height="280dp"
+        android:height="220dp"
         />
     <!--    박스 크기 설정-->
 
