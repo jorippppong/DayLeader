@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">DayLeader</string>
 
+    <string name="notify">Check todo list before you start today!</string>
+
     <string name="Fortune_Cookie">Fortune Cookie</string>
     <string name="Fortune_Sequence">Click the fortune cookie\n     to see your luck!</string>
     //기본 버전 언어(영어)
