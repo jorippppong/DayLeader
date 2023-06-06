@@ -10,141 +10,84 @@
     android:paddingTop="10dp"
     tools:context=".MainActivity">
 
+
+
     <TextView
         android:id="@+id/Calendar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="CALENDAR"
-        android:textColor="#251749"
+        android:textColor="@color/blue_01"
         android:textSize="25dp" />
+    <!-- 캘린더 뷰 위에 표기되는 CALENDAR 글자   -->
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Button
-        android:id="@+id/testbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginEnd="161dp"
-        android:text="test"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="190dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
-    <ImageView
-        android:id="@+id/CALENDAR"
-=======
+
+
+
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/calendarView"
->>>>>>> 644f03b20245edf40d9e1066d4698ff84e6f5b07
         android:layout_width="match_parent"
         android:layout_height="400dp"
+        android:layout_below="@id/Calendar_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Calendar_title"
         app:mcv_selectionColor="@color/blue_01"
         app:mcv_showOtherDates="all" />
+    <!-- 캘린더 보여지는 부분   -->
+
 
     <ImageView
         android:id="@+id/Bluebox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="535dp"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/underpart_background" />
-    <!--    명언 바탕에 이전에 만든 박스 깔기 - 코드 이동 하는 경우 underpart_background 다시 만들어야 함-->
-
-    <ImageView
-        android:id="@+id/Whiterect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="544dp"
-        android:background="@drawable/underpart_rect"
-        android:visibility="invisible" />
-    <!--    명언 들어갈 부분-->
+    <!--    명언 바탕에 이전에 만든 박스 깔기   -->
 
 
-    <!--    수정구슬 이미지-->
-
-
-    <!--    명언 표기하는 부분 제목-->
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="250dp"
-        android:layout_height="0.3dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="706dp"
-        android:background="?android:attr/listDivider"
-        android:backgroundTint="@color/white" />
-
-    <TextView
-        android:id="@+id/Fortune_Today"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/Fortune_teller"
-        android:layout_marginStart="170dp"
-        android:layout_marginBottom="-1dp"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:text="Click Here to See Fortune of Today"
-        android:textColor="#251749"
-        android:textSize="15dp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/Fortune_teller"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="685dp"
-        android:background="@drawable/magic_ball" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginStart="15dp"
-        android:layout_marginBottom="144dp"
-        android:text="Today's letter"
-        android:textColor="#251749"
-        android:textSize="25dp"
+        android:layout_marginBottom="173dp"
+        android:text="Today's Quote"
+        android:textColor="@color/blue_04"
+        android:textSize="30dp"
         android:textStyle="bold" />
+    <!-- 명언 보여주는 부분 제목(Today's Quote)   -->
 
     <TextView
         android:id="@+id/Eng_Quotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="56dp"
-        android:layout_marginBottom="90dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="118dp"
         android:text='"I am not afraid of storms\n for I am learning how to sail my ship."'
+        android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="18dp" />
+    <!-- 영어 명언   -->
+
 
     <TextView
         android:id="@+id/Kor_Quotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="68dp"
-        android:layout_marginBottom="75dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="95dp"
         android:text='"나는 폭풍이 두렵지 않다. 나의 배로 항해하는 법을 배우고 있으니까."'
-        android:textColor="#251749"
-        android:textSize="10dp" />
-
-
+        android:textColor="@color/blue_04"
+        android:textSize="11dp" />
+    <!-- 한국어 명언   -->
 
     <TextView
         android:id="@+id/by_whom"
@@ -153,24 +96,75 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="274dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginBottom="68dp"
         android:text="Helen Keller"
-        android:textColor="#212C53"
+        android:textColor="@color/blue_02"
         android:textSize="15dp"
         android:textStyle="bold" />
-
-
+    <!-- 해당 명언 말한 사람   -->
 
     <View
         android:id="@+id/WhiteUnderline"
         android:layout_width="360dp"
         android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="675dp"
+        android:layout_marginBottom="60dp"
         android:background="?android:attr/listDivider"
         android:backgroundTint="#FFFFFF" />
+    <!-- 명언과 오늘의 운세 버튼 구분선   -->
+
+    <ImageView
+        android:id="@+id/reload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/title"
+        android:layout_marginStart="370dp"
+        app:srcCompat="@drawable/baseline_loop_24" />
+    <!-- 해당 버튼 클릭시에 랜덤으로 다음 명언 출력   -->
+
+
+
+    <TextView
+        android:id="@+id/Fortune_Today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="10dp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:text="Click Here to See Fortune of Today"
+        android:textColor="@color/blue_01"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+    <!--    오늘의 운세 페이지로 연결하는 버튼-->
+
+    <View
+        android:id="@+id/underline_for_fortune"
+        android:layout_width="260dp"
+        android:layout_height="0.3dp"
+        android:layout_marginStart="130dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7dp"
+        android:layout_alignEnd="@id/Fortune_Today"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="@color/white" />
+    <!-- 오늘의 운세 버튼 아래 강조 표시용 흰색 선   -->
+
+
+    <ImageView
+        android:id="@+id/Fortune_cookie"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@id/Fortune_Today"
+        android:layout_alignStart="@id/underline_for_fortune"
+        android:layout_marginTop="620dp"
+        android:background="@drawable/fortune_cookie_for_button_sb" />
+    <!-- 오늘의 운세 페이지로 연결하는 버튼 옆의 포춘쿠키 이미지    -->
 
 
 </RelativeLayout>
->>>>>>> dd788fd584d72de219cd4cb572a96747b1662c77
+

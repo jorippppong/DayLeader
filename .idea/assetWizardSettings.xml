@@ -3,11 +3,14 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+<<<<<<< HEAD
+=======
         <entry key="imageWizard">
           <value>
             <PersistentState />
           </value>
         </entry>
+>>>>>>> ec22d19b3bdddc716d7b5dfb05ea127810322808
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -23,7 +26,11 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
+<<<<<<< HEAD
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/loop/baseline_loop_24.xml" />
+=======
                                       <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/close/baseline_close_24.xml" />
+>>>>>>> ec22d19b3bdddc716d7b5dfb05ea127810322808
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,7 +40,12 @@
                         </option>
                         <option name="values">
                           <map>
+<<<<<<< HEAD
+                            <entry key="outputName" value="baseline_loop_24" />
+                            <entry key="sourceFile" value="C:\Users\user\Desktop\DayLeader" />
+=======
                             <entry key="outputName" value="ic_close_24" />
+>>>>>>> ec22d19b3bdddc716d7b5dfb05ea127810322808
                           </map>
                         </option>
                       </PersistentState>
