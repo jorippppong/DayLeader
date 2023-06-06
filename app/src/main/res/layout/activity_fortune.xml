@@ -24,6 +24,7 @@
         app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fortuneCookieButton" />
+    <!--  포춘쿠키를 클릭하라는 안내문  -->
 
     <ImageButton
         android:id="@+id/fortuneCookieButton"
@@ -39,6 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <!--  포춘쿠키 모양의 버튼으로 클릭하면 포춘 쿠키 사진이 깨진 포춘 쿠키로 변함  -->
 
     <TextView
         android:id="@+id/text_fortune_cookie"
@@ -55,6 +57,7 @@
         app:layout_constraintBottom_toTopOf="@+id/fortuneCookieButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    <!-- 포춘 쿠키 제목   -->
 
     <ImageView
         android:id="@+id/first_clover"
@@ -63,6 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fortune_clover" />
+    <!--  좌 상단의 클로버  -->
 
     <ImageView
         android:id="@+id/second_clover"
@@ -71,6 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fortune_clover" />
+    <!--  우 상단의 클로버  -->
 
     <ImageView
         android:id="@+id/third_clover"
@@ -80,6 +85,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/fortune_clover" />
+    <!--  좌 하단의 클로버  -->
 
     <ImageView
         android:id="@+id/fourth_clover"
@@ -89,6 +95,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/fortune_clover" />
+    <!--  우 하단의 클로버  -->
 
     <ImageView
         android:id="@+id/fortune_paper_imageView"
@@ -101,6 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/fortune_paper" />
+    <!-- 포춘 쿠키 운세 메시지 종이로 위에 버튼을 클릭시 메시지가 여기에 출력   -->
 
     <TextView
         android:id="@+id/show_fortune_message"
@@ -110,5 +118,6 @@
         app:layout_constraintEnd_toEndOf="@+id/fortune_paper_imageView"
         app:layout_constraintStart_toStartOf="@+id/fortune_paper_imageView"
         app:layout_constraintTop_toTopOf="@+id/fortune_paper_imageView" />
+    <!-- 포춘 쿠키 모양의 버튼 클릭시 출력 되는 메시지란  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
