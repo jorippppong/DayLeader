@@ -120,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Calendar에 알림받을 시간을 set
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 14);
-        calendar.set(Calendar.MINUTE, 49);
+        calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.MINUTE, 00);
         calendar.set(Calendar.SECOND, 00);
 
         //설정된 시간을 지난 경우 달력이 하루씩 증가하여 다음 날 알림 예약
