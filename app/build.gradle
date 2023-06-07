@@ -6,6 +6,7 @@ plugins {
 android {
     namespace 'com.example.dayleader'
     compileSdk 33
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.dayleader"
