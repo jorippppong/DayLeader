@@ -21,25 +21,29 @@ import androidx.core.content.ContextCompat;
 
 public class MemoBroadcast extends BroadcastReceiver {
 
+
+
+
+    //권한 없을 때 행동 따로 지정 안 했으므로 warning없애주는 SuppressLint사용
     @SuppressLint("MissingPermission")
     @Override
     public void onReceive(Context context, Intent intent) { //알림 시간이 되었을 때 onReceive실행
 
-        if (Build.VERSION.SDK_INT >= 33) {
-            if (ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Handle the case where the permission is not granted
-                return;
-            }
-        }
 
-            //NotificationOpen.class시작하기 위한 intent
-            Intent repeating_Intent = new Intent(context, NotificationOpen.class);
+            //알림 click했을 때 MainActivity.class 실행되도록 하는 intent 생성
+            Intent repeating_Intent = new Intent(context, MainActivity.class);
             //단일 instance 유지 관리위해 Flag사용
-            repeating_Intent.putExtra("NotificationOpen", true);
+            repeating_Intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            //NotificationOpen.class를 시작하는 pendingIntent 생성
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, repeating_Intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
+            //PendingIntent 생성
+            PendingIntent pendingIntent;
+            //device SDK버전에 따라 Flag 다르게 지정
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                //repeating_Intent받아 사용하는 pendingIntent로 지정
+                pendingIntent = PendingIntent.getActivity(context, 0, repeating_Intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+            }else {
+                pendingIntent = PendingIntent.getActivity(context, 0, repeating_Intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            }
             //알림에 명시될 내용 설정(R.string.notify)
             String notificationContent = context.getString(R.string.notify);
 
@@ -65,23 +69,15 @@ public class MemoBroadcast extends BroadcastReceiver {
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
 
             //알림 Id: 200, builder.build()로 표시할 최종 객체 빌드 후 표시
-//        if(Build.VERSION.SDK_INT >= 33) {
-//            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
-//                // TODO: Consider calling
-//                //    ActivityCompat#requestPermissions
-//                // here to request the missing permissions, and then overriding
-//                ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.POST_NOTIFICATIONS}, 101);
-//                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//                //                                          int[] grantResults)
-//
-//                // to handle the case where the user grants the permission. See the documentation
-//                // for ActivityCompat#requestPermissions for more details.
-//            }
-//        }
             notificationManager.notify(200, builder.build());
+
+
 
 
         }
 
 
+
     }
+
+
