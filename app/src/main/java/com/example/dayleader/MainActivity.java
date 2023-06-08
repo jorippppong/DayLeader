@@ -120,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Calendar에 알림받을 시간을 set
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 8);
-        calendar.set(Calendar.MINUTE, 00);
+        calendar.set(Calendar.HOUR_OF_DAY, 6);
+        calendar.set(Calendar.MINUTE, 37);
         calendar.set(Calendar.SECOND, 00);
 
         //설정된 시간을 지난 경우 달력이 하루씩 증가하여 다음 날 알림 예약
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         //알림이 발생 시, MemoBroadcast.class에게 방송하기
         Intent intent = new Intent(MainActivity.this, MemoBroadcast.class);
         //getApplicationContext()로 context얻고 PendingIntent를 통해 방송 예약하기
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE);
 
         //AlarmManger 메소드로 device(SystemService)에 미래에 대한 알림 등록
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
