@@ -118,24 +118,24 @@ public class MainActivity extends AppCompatActivity {
         NotificationChannel();
 
 
-        //Calendar에 알림받을 시간을 set
+        //Calendar로 시간 가져와 알림받을 시간을 set
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 6);
-        calendar.set(Calendar.MINUTE, 37);
+        calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.MINUTE, 00);
         calendar.set(Calendar.SECOND, 00);
 
         //설정된 시간을 지난 경우 달력이 하루씩 증가하여 다음 날 알림 예약
         if (Calendar.getInstance().after(calendar)) {
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }
-        //알림이 발생 시, MemoBroadcast.class에게 방송하기
+        //알림이 발생 시, MemoBroadcast.class에게 보내는 intent 생성
         Intent intent = new Intent(MainActivity.this, MemoBroadcast.class);
-        //getApplicationContext()로 context얻고 PendingIntent를 통해 방송 예약하기
+        //gPendingIntent를 통해 Activity 종료되도 intent 사용할 수 있도록
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE);
 
-        //AlarmManger 메소드로 device(SystemService)에 미래에 대한 알림 등록
+        //AlarmManger로 device(SystemService)에 미래에 대한 알림 등록
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        //setRepeating으로 알림 반복하는데 이때 RTC_WAKEUP: 실제 시간 기준으로 대기 상태일 경우 device를 활성 상태로 전환 후, 알림 전송, INTERVAL_DAY: 하루 간격
+        //setRepeating으로 알림 반복하는데 calendar에서 시간 가져오고 이때 RTC_WAKEUP: 실제 시간 기준으로 대기 상태일 경우 device를 활성 상태로 전환 후, 알림 전송, INTERVAL_DAY: 하루 간격
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { //Android M이상의 기기의 경우 저전력 모드에서도 지정된 시간에 알림 발생
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);

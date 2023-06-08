@@ -24,19 +24,22 @@ public class MemoBroadcast extends BroadcastReceiver {
 
 
 
+    //권한 없을 때 행동 따로 지정 안 했으므로 warning없애주는 SuppressLint사용
     @SuppressLint("MissingPermission")
     @Override
     public void onReceive(Context context, Intent intent) { //알림 시간이 되었을 때 onReceive실행
 
 
-            //MainActivity.class로 intent
+            //알림 click했을 때 MainActivity.class 실행되도록 하는 intent 생성
             Intent repeating_Intent = new Intent(context, MainActivity.class);
             //단일 instance 유지 관리위해 Flag사용
             repeating_Intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            //NotificationOpen.class를 시작하는 pendingIntent 생성
+            //PendingIntent 생성
             PendingIntent pendingIntent;
+            //device SDK버전에 따라 Flag 다르게 지정
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                //repeating_Intent받아 사용하는 pendingIntent로 지정
                 pendingIntent = PendingIntent.getActivity(context, 0, repeating_Intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
             }else {
                 pendingIntent = PendingIntent.getActivity(context, 0, repeating_Intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -66,7 +69,6 @@ public class MemoBroadcast extends BroadcastReceiver {
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
 
             //알림 Id: 200, builder.build()로 표시할 최종 객체 빌드 후 표시
-
             notificationManager.notify(200, builder.build());
 
 
