@@ -50,9 +50,9 @@ public class MemoBroadcast extends BroadcastReceiver {
                     //user가 알림 클릭 시 행해지는 intent
                     .setContentIntent(pendingIntent)
                     //상태표시줄에 나오는 작은 아이콘
-                    .setSmallIcon(R.drawable.fortune_clover)
+                    .setSmallIcon(R.drawable.dayleader_logo)
                     //알림 상세보기 누르면 나오는 큰 아이콘
-                    .setLargeIcon(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.fortune_clover), 128, 128, false))
+                    .setLargeIcon(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.dayleader_logo), 120, 120, false))
                     //알림 제목
                     .setContentTitle("DAYLEADER")
                     //알림에 세부 내용
