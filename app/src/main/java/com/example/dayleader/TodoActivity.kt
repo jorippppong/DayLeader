@@ -36,15 +36,15 @@ class TodoActivity : AppCompatActivity() {
 
     //recyclerView 가 불러올 목록
     private var todoAdapter: TodoAdapter? = null
-    private var todoData:MutableList<TodoInfo> = mutableListOf()
+    private var todoData: MutableList<TodoInfo> = mutableListOf()
 
-    init{
+    init {
         instance = this
     }
 
-    companion object{
-        private var instance:TodoActivity? = null
-        fun getInstance():TodoActivity?{
+    companion object {
+        private var instance: TodoActivity? = null
+        fun getInstance(): TodoActivity? {
             return instance
         }
     }
@@ -77,17 +77,24 @@ class TodoActivity : AppCompatActivity() {
         binding.year.text = year
         binding.month.text = convertMonthToString(month)
         binding.day.text = day
-        val date = year+month.toString()+day
+        val date = year + month.toString() + day
 
         //to-do 4 : to-do 추가
         binding.btnTodo.setOnClickListener {
             todoData.add(TodoInfo(false, date, "EMPTY", "", true))
-            todoAdapter?.notifyItemInserted(todoData.size -1)
+            todoAdapter?.notifyItemInserted(todoData.size - 1)
+        }
+
+        //링크 이동
+        binding.ivCommercial.setOnClickListener {
+            val openUrl = Intent(Intent.ACTION_VIEW)
+            openUrl.data = Uri.parse("https://www.hufs.ac.kr/")
+            startActivity(openUrl)
         }
     }
 
     //bottom sheet 함수
-    fun showTodoBottomSheetDialog(member:TodoInfo, position:Int){
+    fun showTodoBottomSheetDialog(member: TodoInfo, position: Int) {
         val bottomSheetDialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
         bottomSheetDialog.setContentView(R.layout.bottom_sheet_dialog_todo)
 
@@ -103,6 +110,7 @@ class TodoActivity : AppCompatActivity() {
 
             todoData[position].modifyClicked = true
             todoAdapter?.notifyItemChanged(position)
+
         }
 
         //투두 삭제 버튼 구현
@@ -114,9 +122,9 @@ class TodoActivity : AppCompatActivity() {
 
         //이미지 추가, 삭제의 버튼 text 설정
         val image = bottomSheetDialog.findViewById<Button>(R.id.btn_delete_photo)
-        if(todoData[position].imageUrl == "EMPTY"){
+        if (todoData[position].imageUrl == "EMPTY") {
             image?.setText(R.string.upload_photo)
-        } else{
+        } else {
             image?.setText(R.string.delete_photo)
         }
 
@@ -124,11 +132,11 @@ class TodoActivity : AppCompatActivity() {
         image?.setOnClickListener {
             bottomSheetDialog.dismiss()
             publicPosition = position
-            if(todoData[position].imageUrl == "EMPTY"){
+            if (todoData[position].imageUrl == "EMPTY") {
                 //사진 추가
                 checkingPermission()
                 todoAdapter?.notifyItemChanged(position)
-            }else{
+            } else {
                 //사진 삭제
                 todoData[position].imageUrl = "EMPTY"
                 todoAdapter?.notifyItemChanged(position)
@@ -137,15 +145,24 @@ class TodoActivity : AppCompatActivity() {
         bottomSheetDialog.show()
     }
 
+    //수정 클릭했을 때 광고 안보이게
+    fun commercialVisibility(visible:Boolean){
+        if(visible){
+            binding.ivCommercial.visibility = View.VISIBLE
+        }
+        else{
+            binding.ivCommercial.visibility = View.INVISIBLE
+        }
+    }
 
 
-    fun deleteTodo(member:TodoInfo){
+    fun deleteTodo(member: TodoInfo) {
         todoData.remove(member)
         todoAdapter?.notifyDataSetChanged()
     }
 
     //이미지 크게 보여 주는 기능
-    fun showImageBottomSheetDialog(imageUrl: String, task:String){
+    fun showImageBottomSheetDialog(imageUrl: String, task: String) {
         val bottomSheetDialog = BottomSheetDialog(this)
         bottomSheetDialog.setContentView(R.layout.bottom_sheet_show_image)
         bottomSheetDialog.behavior.state = STATE_EXPANDED
@@ -163,14 +180,14 @@ class TodoActivity : AppCompatActivity() {
             .error(R.drawable.iv_daily_todo_checked)
             .into(image)
 
-        image?.setOnClickListener{
-            if((popTop?.visibility == View.VISIBLE) and (popBottom?.visibility == View.VISIBLE)){
-                exit?.setOnClickListener  {
+        image.setOnClickListener {
+            if ((popTop?.visibility == View.VISIBLE) and (popBottom?.visibility == View.VISIBLE)) {
+                exit?.setOnClickListener {
                     bottomSheetDialog.dismiss()
                 }
                 popTop?.visibility = View.INVISIBLE
                 popBottom?.visibility = View.INVISIBLE
-            }else if((popTop?.visibility == View.INVISIBLE) and (popBottom?.visibility == View.INVISIBLE)){
+            } else if ((popTop?.visibility == View.INVISIBLE) and (popBottom?.visibility == View.INVISIBLE)) {
                 popTop?.visibility = View.VISIBLE
                 popBottom?.visibility = View.VISIBLE
             }
@@ -179,7 +196,7 @@ class TodoActivity : AppCompatActivity() {
     }
 
     //앨범 접근 권한
-    private fun checkingPermission() {
+    fun checkingPermission() {
         when {
             //1. 처음 부터 허용 권한 있었음
             ContextCompat.checkSelfPermission(
@@ -210,27 +227,28 @@ class TodoActivity : AppCompatActivity() {
         }
     }
 
-    private fun init(){
-        launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
-            if(result.resultCode == RESULT_OK){
-                val intent = checkNotNull(result.data)
-                val imageUri = intent.data
+    fun init() {
+        launcher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == RESULT_OK) {
+                    val intent = checkNotNull(result.data)
+                    val imageUri = intent.data
 
-                Log.d("yuri", "imageUri : $imageUri")
-                uploadPhoto(publicPosition, imageUri)
+                    Log.d("yuri", "imageUri : $imageUri")
+                    uploadPhoto(publicPosition, imageUri)
+                }
             }
-        }
     }
 
     //사진 업로드
-    private fun uploadPhoto(publicPosition: Int, imageUri: Uri?) {
+    fun uploadPhoto(publicPosition: Int, imageUri: Uri?) {
         Log.d("yuri", "image설정 성공$imageUri")
         todoData[publicPosition].imageUrl = imageUri.toString()
         todoAdapter?.notifyItemChanged(publicPosition)
     }
 
     //갤러리 에서 사진 가져 오기
-    private fun navigatePhoto(){
+    fun navigatePhoto() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/jpeg"
         launcher.launch(intent)
@@ -238,7 +256,7 @@ class TodoActivity : AppCompatActivity() {
 
 
     //여기 입니다....(2)
-    private fun showPermissionContextPopup() {
+    fun showPermissionContextPopup() {
         AlertDialog.Builder(this)
             .setTitle("Need Permission")
             .setMessage("DayLeader requires permission to select photos.")
@@ -261,19 +279,19 @@ class TodoActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when(requestCode){
+        when (requestCode) {
             1000 -> {
-                if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     //권한이 허용 된것
                     //허용 클릭시
                     Toast.makeText(this, "move to Album", Toast.LENGTH_SHORT).show()
                     navigatePhoto()
-                }
-                else{
+                } else {
                     //거부 클릭시
                     Toast.makeText(this, "Album access denied", Toast.LENGTH_SHORT).show()
                 }
             }
+
             else -> {
                 //do nothing
             }
@@ -289,6 +307,7 @@ class TodoActivity : AppCompatActivity() {
                 finish()
                 return true
             }
+
             else -> {}
         }
         return super.onOptionsItemSelected(item)

@@ -70,6 +70,9 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
             this.mMember = member
             this.mPosition = position
 
+            //todo
+            //todoActivity?.commercialVisibility(member)
+
             //text 설정
             binding.etTodo.setText(member.task)
 
@@ -80,8 +83,10 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
                 binding.btnCheck.setImageResource(R.drawable.btn_todo_disabled)
             }
 
+
             //to-do 수정 하는 구간 (내용이 없으면 삭제될 수도 있음)
             if (mMember!!.modifyClicked) {
+                todoActivity?.commercialVisibility(false)   //안보이게
                 binding.btnThreeDot.visibility = View.INVISIBLE
                 binding.ivPhoto.visibility = View.INVISIBLE
                 binding.btnCheck.isEnabled = false
@@ -110,6 +115,8 @@ class TodoAdapter:RecyclerView.Adapter<TodoAdapter.Holder>() {
                             //투두에 값이 있는 경우 (신규 -> 추가 or 있는 -> 수정)
                             member.task = binding.etTodo.text.toString() //task 갱신
                         }
+                        //보이게
+                        todoActivity?.commercialVisibility(true) //보이게
                         true
                     } else {
                         false
