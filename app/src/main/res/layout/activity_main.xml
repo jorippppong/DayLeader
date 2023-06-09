@@ -10,20 +10,27 @@
     android:paddingTop="10dp"
     tools:context=".MainActivity">
 
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Calendar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="50dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     <TextView
-        android:id="@+id/Calendar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="CALENDAR"
-        android:textColor="@color/blue_01"
-        android:textSize="25dp" />
-    <!-- 캘린더 뷰 위에 표기되는 CALENDAR 글자   -->
+        android:layout_gravity="center"
+        android:text="Calendar"
+        android:textColor="@color/grey_01"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-
-
+    </androidx.appcompat.widget.Toolbar>
 
 <<<<<<< Updated upstream
 
@@ -101,9 +108,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="95dp"
         android:text='"나는 폭풍이 두렵지 않다. 나의 배로 항해하는 법을 배우고 있으니까."'
-        android:textColor="@color/blue_04"
-        android:textSize="11dp" />
-    <!-- 한국어 명언   -->
+        android:textColor="#251749"
+        android:textSize="10dp" />
 
     <TextView
         android:id="@+id/by_whom"
@@ -139,7 +145,6 @@
         android:layout_marginStart="370dp"
         app:srcCompat="@drawable/baseline_loop_24" />
     <!-- 해당 버튼 클릭시에 랜덤으로 다음 명언 출력   -->
-
 
 
     <TextView

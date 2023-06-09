@@ -22,8 +22,6 @@ import androidx.core.content.ContextCompat;
 public class MemoBroadcast extends BroadcastReceiver {
 
 
-
-
     //권한 없을 때 행동 따로 지정 안 했으므로 warning없애주는 SuppressLint사용
     @SuppressLint("MissingPermission")
     @Override
