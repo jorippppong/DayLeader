@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -113,6 +114,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //===포츈쿠키 넘어가기==//
+        TextView fortuneCookie = findViewById(R.id.Fortune_Today);
+        fortuneCookie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FortuneActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         //알림 채널 생성
         NotificationChannel();
