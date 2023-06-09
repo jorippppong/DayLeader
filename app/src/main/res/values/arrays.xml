@@ -1,0 +1,29 @@
+<resources>
+    <!-- 한국어 -->
+    <string-array name="fortunes_ko">
+        <item>오늘은 좋은 날이 될 것 입니다.</item>
+        <item>오늘은 어떤 일이\n생기더라도 긍정적으로 대처 하세요</item>
+        <item>걱정 하지 마세요. 모든 것이 잘 될 것 입니다</item>
+        <item>오늘 당신에게 큰 도움을\n줄수 있는 사람을 만날 수 있을 겁니다.</item>
+        <item>끝까지 포기 하지 마세요.\n보답 받을 날이 올 겁니다</item>
+        <item>실패는 성공의 어머니 입니다.\n포기 하지 마세요.</item>
+        <item>문제의 정답은\n내 안에 있을 수 있습니다.</item>
+        <item>늦었다고 생각 하였을 때가\n가장 빠를 때 입니다.</item>
+        <item>오늘은 뭐든 성공할 수 있는 날 입니다.\n뭐든지 시도 해보세요!</item>
+        <item>보이는 힘들어 하는 사람을 도와 주세요.\n보답 받을 겁니다.</item>
+    </string-array>
+
+    <!-- 기본 언어 (영어) -->
+    <string-array name="fortunes_default">
+        <item>Today will be a good day.</item>
+        <item>Whatever happens today,\nthink positively.</item>
+        <item>Don not be afraid.\nIt will all work out.</item>
+        <item>Today you will meet someone\n who will be very helpful to you.</item>
+        <item>Don not give up.\nYou will be rewarded some day.</item>
+        <item>Failure is the mother of success.\nDon not give up.</item>
+        <item>The answer of a problem\ncould be inside of you.</item>
+        <item>It is the quickest\nwhen you think it is to late.</item>
+        <item>You can succeed anything\nyou try today. Try everything!</item>
+        <item>Help someone who is having\na hard time. You will be rewarded.</item>
+    </string-array>
+</resources>

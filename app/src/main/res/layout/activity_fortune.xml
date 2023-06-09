@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/text_fortune_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="200dp"
+        android:text="@string/Fortune_Sequence"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fortuneCookieButton" />
+    <!--  포춘쿠키를 클릭하라는 안내문  -->
+
+    <ImageButton
+        android:id="@+id/fortuneCookieButton"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/fortune_cookie_image"
+        app:layout_constraintBottom_toTopOf="@+id/text_fortune_click"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--  포춘쿠키 모양의 버튼으로 클릭하면 포춘 쿠키 사진이 깨진 포춘 쿠키로 변함  -->
+
+    <TextView
+        android:id="@+id/text_fortune_cookie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/Fortune_Cookie"
+        android:textColor="@color/black"
+        android:textIsSelectable="false"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fortuneCookieButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!-- 포춘 쿠키 제목   -->
+
+    <ImageView
+        android:id="@+id/first_clover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fortune_clover" />
+    <!--  좌 상단의 클로버  -->
+
+    <ImageView
+        android:id="@+id/second_clover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fortune_clover" />
+    <!--  우 상단의 클로버  -->
+
+    <ImageView
+        android:id="@+id/third_clover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fortune_clover" />
+    <!--  좌 하단의 클로버  -->
+
+    <ImageView
+        android:id="@+id/fourth_clover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/fortune_clover" />
+    <!--  우 하단의 클로버  -->
+
+    <ImageView
+        android:id="@+id/fortune_paper_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fortune_paper" />
+    <!-- 포춘 쿠키 운세 메시지 종이로 위에 버튼을 클릭시 메시지가 여기에 출력   -->
+
+    <TextView
+        android:id="@+id/show_fortune_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/fortune_paper_imageView"
+        app:layout_constraintEnd_toEndOf="@+id/fortune_paper_imageView"
+        app:layout_constraintStart_toStartOf="@+id/fortune_paper_imageView"
+        app:layout_constraintTop_toTopOf="@+id/fortune_paper_imageView" />
+    <!-- 포춘 쿠키 모양의 버튼 클릭시 출력 되는 메시지란  -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
